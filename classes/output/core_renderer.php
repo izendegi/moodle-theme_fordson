@@ -588,11 +588,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         $hascreateicon = (empty($PAGE->theme->settings->createicon && isloggedin() && has_capability('moodle/course:create', $context))) ? false : $PAGE->theme->settings->createicon;
         $createbuttonurl = (empty($PAGE->theme->settings->createbuttonurl)) ? false : $PAGE->theme->settings->createbuttonurl;
-        $createbuttontext = (empty($PAGE->theme->settings->createbuttontext)) ? false : $PAGE->theme->settings->createbuttontext;
+        $createbuttontext = (empty($PAGE->theme->settings->createbuttontext)) ? false : format_text($PAGE->theme->settings->createbuttontext);
 
         $hasslideicon = (empty($PAGE->theme->settings->slideicon && isloggedin() && !isguestuser())) ? false : $PAGE->theme->settings->slideicon;
         $slideiconbuttonurl = 'data-toggle="collapse" data-target="#collapseExample';
-        $slideiconbuttontext = (empty($PAGE->theme->settings->slideiconbuttontext)) ? false : $PAGE->theme->settings->slideiconbuttontext;
+        $slideiconbuttontext = (empty($PAGE->theme->settings->slideiconbuttontext)) ? false : format_text($PAGE->theme->settings->slideiconbuttontext);
 
         $hasnav1icon = (empty($PAGE->theme->settings->nav1icon && isloggedin() && !isguestuser())) ? false : $PAGE->theme->settings->nav1icon;
         $hasnav2icon = (empty($PAGE->theme->settings->nav2icon && isloggedin() && !isguestuser())) ? false : $PAGE->theme->settings->nav2icon;
